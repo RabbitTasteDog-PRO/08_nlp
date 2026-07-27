@@ -1,0 +1,28 @@
+# Python 3.12 기준. 노트북에서 직접 사용하는 패키지 목록입니다.
+gdown>=5.2,<6
+ipykernel>=6.29,<7
+jupyterlab>=4.2,<5
+kss>=6.0,<7
+konlpy>=0.6,<1
+mecab-ko-dic>=1.0.0,<2
+matplotlib>=3.8,<4
+networkx>=3.2,<4
+nltk>=3.9,<4
+pandas>=2.2,<4
+scikit-learn>=1.5,<2
+spacy>=3.7,<4
+wordcloud>=1.9,<2
+
+# macOS Intel 호환 프로필
+# Apple Silicon(arm64)과 그 밖의 플랫폼에는 아래 제약이 적용되지 않습니다.
+numpy>=1.26,<2 ; sys_platform == "darwin" and platform_machine == "x86_64"
+scipy<1.17 ; sys_platform == "darwin" and platform_machine == "x86_64"
+transformers==4.50.0 ; sys_platform == "darwin" and platform_machine == "x86_64"
+torch==2.2.2 ; sys_platform == "darwin" and platform_machine == "x86_64"
+tensorflow==2.16.2 ; sys_platform == "darwin" and platform_machine == "x86_64"
+
+# Apple Silicon(M-series) 및 macOS 이외 플랫폼 프로필
+numpy>=1.26,<3 ; sys_platform != "darwin" or platform_machine != "x86_64"
+torch>=2.2,<3 ; sys_platform != "darwin" or platform_machine != "x86_64"
+transformers>=4.40,<5 ; sys_platform != "darwin" or platform_machine != "x86_64"
+tensorflow>=2.16,<3 ; sys_platform != "darwin" or platform_machine != "x86_64"
